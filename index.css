@@ -1,0 +1,22 @@
+body {
+    padding: 2em;
+    margin: 1em;
+    border: thin solid #eee;
+    min-width: 400px;
+}
+
+
+
+#list, #input, #control, #input input, #input button {
+    margin: .5em 0;
+    padding: .5em 0;
+}
+
+#input input, #input button {
+    padding: .5em;
+}
+
+#input input {
+    font-size: 1.4em;
+    min-width: 60%;
+}

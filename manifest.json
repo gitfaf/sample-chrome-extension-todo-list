@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "version": "1.0.0",
+
+    "name": "sample-todo-list",
+    "description": "A simple sample todo list application!",
+
+    "browser_action": {
+        "default_popup": "index.html"
+    },
+    "permissions": ["tabs", "storage"]
+}
