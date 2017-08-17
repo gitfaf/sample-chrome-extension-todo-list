@@ -58,6 +58,10 @@ var UI = {
         console.log('pushItemToList called.');
         UI.getListElement().append(UI.createListItem(value));
     },
+    unshiftItemToList: function (value) {
+        console.log('unshiftItemToList called.');
+        UI.getListElement().prepend(UI.createListItem(value));
+    },
     pushItemsToList: function (listArray) {
         console.log('pushItemsToList called.');
         listArray.forEach(function (x) {
@@ -68,8 +72,8 @@ var UI = {
         console.log('setupSaveButton clicked.');
         let saveBtn = document.getElementById('add');
         saveBtn.addEventListener('click', function () {
+            console.log('setupSaveButton clicked.');
             let value = document.getElementById('item-input').value;
-            console.log('setupSaveButton clicked:', value);
             UI.pushItemToList(value);
         });
     },
@@ -95,6 +99,15 @@ var UI = {
             console.log('syncButton clicked.');
             STORAGE.save(Processing.createListFromUI());
         })
+    },
+    setupUrgentButton: function () {
+        console.log('setupUrgentButton called.');
+        let urgentBtn = document.getElementById('urgent');
+        urgentBtn.addEventListener('click', function () {
+            console.log('urgentBtn clicked.');
+            let value = document.getElementById('item-input').value;
+            UI.unshiftItemToList(value);
+        });
     }
 };
 
@@ -113,6 +126,7 @@ function fireWhenDOMContentIsLoaded() {
     UI.setupSaveButton();
     UI.setupClearListButton();
     UI.setupSyncButton();
+    UI.setupUrgentButton();
     renderList();
 }
 
